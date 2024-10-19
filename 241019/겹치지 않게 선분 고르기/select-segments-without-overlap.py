@@ -7,6 +7,8 @@ line =[
 ]
 answer=0
 
+print(line)
+
 def check(lst, obj) :
     for i in lst :
         if (line[i][0] <= obj[0] and line[i][1] >= obj[0]) or (line[i][0] <= obj[1] and line[i][1] >= obj[1]) :
@@ -18,8 +20,6 @@ def check(lst, obj) :
 def choose(index, lst) :
     global answer
 
-
-    
     if index== n : 
         answer = max(answer,len(lst))
 
@@ -27,12 +27,10 @@ def choose(index, lst) :
 
     for i in range(index,n) :
         flag = check(lst,line[i])
-        if flag :
+        if flag:
             lst.append(i)
-
+        lst = list(lst)
         choose(i+1,lst)
-        if flag :
-            lst.pop()
 
         
 
