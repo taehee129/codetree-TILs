@@ -18,6 +18,7 @@ def check(lst, obj) :
 def choose(index, lst) :
     global answer
 
+    lst = list(lst)
     if index== n : 
         answer = max(answer,len(lst))
 
@@ -30,8 +31,9 @@ def choose(index, lst) :
 
         choose(i+1,lst)
 
-        if len(lst) >0:
-            lst.pop()
+        
+
+
  
 
 
