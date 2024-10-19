@@ -6,18 +6,34 @@ line =[
     for _ in range(n)
 ]
 answer=0
-def choose(index, maxNum,cnt) :
+
+def check(lst, obj) :
+    for i in lst :
+        if (line[i][0] <= obj[0] and line[i][1] >= obj[0]) or (line[i][0] <= obj[1] and line[i][1] >= obj[1]) :
+            return False
+    return True
+    
+
+
+def choose(index, lst) :
     global answer
-    if index== n :
-        answer = max(answer,cnt)
+
+    if index== n : 
+        answer = max(answer,len(lst))
+
         return
 
     for i in range(index,n) :
-        if maxNum < line[i][0] :
-            maxNum = line[i][1]
-            cnt +=1
-        choose(i+1,maxNum,cnt)
+      
+        if check(lst,line[i]) :
+            lst.append(i)
+
+        choose(i+1,lst)
+
+        if len(lst) >0:
+            lst.pop()
+ 
 
 
-choose(0,0,0)
+choose(0,[])
 print(answer)
