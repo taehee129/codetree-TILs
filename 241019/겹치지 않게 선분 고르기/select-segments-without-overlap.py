@@ -18,23 +18,25 @@ def check(lst, obj) :
 def choose(index, lst) :
     global answer
 
-    lst = list(lst)
+
+    
     if index== n : 
         answer = max(answer,len(lst))
 
         return
 
     for i in range(index,n) :
-      
-        if check(lst,line[i]) :
+        flag = check(lst,line[i])
+        if flag :
             lst.append(i)
 
         choose(i+1,lst)
+        if flag :
+            lst.pop()
 
         
 
 
- 
 
 
 choose(0,[])
