@@ -12,5 +12,8 @@ for i in range(n) :
             continue
         dp[i] = max(dp[i], dp[j]+1)
 
+    if i !=0 and dp[i] ==0 :
+        break
+
 
 print(max(dp))
