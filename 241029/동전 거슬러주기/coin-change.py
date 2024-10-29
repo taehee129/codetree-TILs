@@ -5,7 +5,8 @@ lst = list(map(int,input().split()))
 
 dp = [10001]*m 
 for i in lst :
-    dp[i-1] = 1
+    if i-1 <m :
+        dp[i-1] = 1
 
 for i in range(m) :
     for j in range(n) :
