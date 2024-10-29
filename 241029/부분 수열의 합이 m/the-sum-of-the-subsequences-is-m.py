@@ -19,12 +19,12 @@ for i in range(1,n) :
         if j-lst[i] > 0 :
             dp[i][j] = min(dp[i-1][j-lst[i]]+1, dp[i-1][j])
         else :
-            dp[i][j] = min(dp[i][j], maxNum)
+            dp[i][j] = min(dp[i][j], dp[i-1][j])
 
 
 asw = maxNum
 for i in range(n) :
-    #print(dp[i])
+    print(dp[i])
     asw = min(dp[i][m],asw)
 
 if asw == maxNum :
