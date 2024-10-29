@@ -13,5 +13,7 @@ for i in range(m) :
             dp[i] = min(dp[i],dp[i-lst[j]]+1)
 
 
-
-print(dp[m-1])
+if dp[m-1] ==10001 :
+    print(-1)
+else :
+    print(dp[m-1])
