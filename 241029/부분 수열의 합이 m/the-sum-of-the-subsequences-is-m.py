@@ -24,7 +24,7 @@ for i in range(1,n) :
 
 asw = maxNum
 for i in range(n) :
-    print(dp[i])
+  
     asw = min(dp[i][m],asw)
 
 if asw == maxNum :
