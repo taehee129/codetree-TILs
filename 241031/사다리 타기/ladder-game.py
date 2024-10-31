@@ -24,6 +24,7 @@ for i in range(m) :
 def doLadder(y,lst) : 
     global n
     for i in range(15) :
+        
         if y-1>=0 and lst[i][y-1]== True:
             y= y-1
         elif y+1<n and lst[i][y] == True :
@@ -85,7 +86,7 @@ for i,per in enumerate(permuList) :
     check= True
     lst =makeLadder(line,per)
     
-    for i in range(4) :
+    for i in range(n) :
         if doLadder(i,lst) != doLadder(i,origin) :
             check =False
     if check :
