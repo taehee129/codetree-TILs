@@ -9,7 +9,7 @@ maxM= 15
 line= list()
 
 origin = [
-    [False]*4
+    [False]*n
     for _ in range(maxM)
 ]
 
@@ -34,8 +34,9 @@ def doLadder(y,lst) :
 
 def makeLadder(line, permuList) :
     global maxM
+    global n
     lst =[
-        [False]*4
+        [False]*n
         for _ in range(maxM)
     ]
 
