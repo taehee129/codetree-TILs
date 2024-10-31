@@ -22,11 +22,11 @@ for i in range(m) :
 
 
 def doLadder(y,lst) : 
-    
+    global n
     for i in range(15) :
         if y-1>=0 and lst[i][y-1]== True:
             y= y-1
-        elif y+1<4 and lst[i][y] == True :
+        elif y+1<n and lst[i][y] == True :
             y= y+1
 
     return y
