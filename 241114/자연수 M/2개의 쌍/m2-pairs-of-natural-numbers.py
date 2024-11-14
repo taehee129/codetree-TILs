@@ -1,7 +1,7 @@
 n = int(input())
 
 lst = [
-    list(map(int,input(split())))
+    list(map(int,input().split()))
     for _ in range(n)
 ]
 
@@ -13,7 +13,7 @@ for i in lst :
 maxVal =0
 x = 0
 y=n-1
-for i in range(m/2) :
+for i in range(int(m/2)) :
 
     if lst[x][0] <0 :
         x+=1
@@ -21,7 +21,7 @@ for i in range(m/2) :
         y -=1
     lst[x][0] +=1
     lst[y][0] -=1
-
-    maxVal = max(maxVal,lst[x][0] + lst[y][0])
+    
+    maxVal = max(maxVal,lst[x][1] + lst[y][1])
 
 print(maxVal)
