@@ -15,9 +15,9 @@ x = 0
 y=n-1
 for i in range(int(m/2)) :
 
-    if lst[x][0] <0 :
+    if lst[x][0] <1 :
         x+=1
-    if lst[y][0] <0 :
+    if lst[y][0] <1 :
         y -=1
     lst[x][0] +=1
     lst[y][0] -=1
