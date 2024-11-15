@@ -19,9 +19,9 @@ for i in range(2,n) :
         if maxVal != 0 :
             dp[i][j+1] =maxVal+val
 
-    # dp[i][1] = max(dp[i-1][0],dp[i-2][1])+val
-    # dp[i][2] = max(dp[i-1][1],dp[i-2][2])+val
-    # dp[i][3] = max(dp[i-1][2],dp[i-2][3])+val
+    dp[i][1] = max(dp[i-1][0],dp[i-2][1])+val
+    dp[i][2] = max(dp[i-1][1],dp[i-2][2])+val
+    dp[i][3] = max(dp[i-1][2],dp[i-2][3])+val
 
 
 
