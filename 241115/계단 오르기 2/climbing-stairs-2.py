@@ -24,8 +24,6 @@ for i in range(2,n) :
     dp[i][3] = max(dp[i-1][2],dp[i-2][3])+val
 
 
-for i in range(n) :
-    print(dp[i])
 
 print(max(dp[n-1]))
 
