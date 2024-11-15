@@ -22,5 +22,7 @@ for _ in range(m) :
 
     lst[x][0] -=1
     sumVal +=lst[x][1]/weight[x]
+
+    
 sumVal = "{:.3f}".format(sumVal)
 print(sumVal)
