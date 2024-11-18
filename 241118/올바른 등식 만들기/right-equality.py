@@ -9,7 +9,7 @@ dp =[
 ]
 
 dp[0][lst[0]+20] = 1
-dp[0][lst[0]*(-1)+20] =1
+dp[0][lst[0]*(-1)+20] +=1
 
 
 for i in range(1,n) :
@@ -18,6 +18,7 @@ for i in range(1,n) :
             dp[i][j] = dp[i-1][j-lst[i]]
         if j+lst[i] < 41 :
             dp[i][j] += dp[i-1][j+lst[i]]
+    
     
     
 print(dp[n-1][m+20])
