@@ -24,12 +24,16 @@ for i in range(1,n) :
             for x in range(3) :
                 if j==x :
                     continue
+
                 if dp[i-1][x][k] != 0 :
-                    dp[i][j][k] = max(dp[i][j][k] , dp[i-1][x][k]+lst[i][j])
+                     
+                    dp[i][j][k] = max(dp[i][j][k] , dp[i-1][x][k]+lst[i][j]) 
 
 answer= 0
 for i in range(3) :
     for j in range(3) :
+        if i==j :
+            continue
         answer = max(answer, dp[n-1][i][j])
 
 print(answer)
