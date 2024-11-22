@@ -10,8 +10,8 @@ if lst[0] == "L" :
 # k%2==0 L  k%2== 1 R
 for i in range(1,n) :
     for j in range(k+1) :
-        if i<=j :
-            continue
+        # if i<=j :
+        #     continue
         if j == 0 :
             if lst[i] == 'L' :
                 dp[i][j] = dp[i-1][j]+1
