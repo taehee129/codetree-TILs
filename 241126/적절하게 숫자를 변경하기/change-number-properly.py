@@ -14,14 +14,13 @@ dp = [
 
 
 dp[0][0][lst[0]-1] =1 
-
+answer=1
 
 # m 다른 횟수 
 #dp[n][m][k] = 1.dp[n-1][m] or 2.dp[n-1][m-1]
 #           1. dp[n-1][m][k] lst[n] =k 라면 +1 
 #           2. dp[n-1][m-1][~k] lst[n]= ~k 라면 +1 중에서 최대값 
 
-answer = 0
 for i in range(1,n) :
     for j in range(m) :
         for k in range(4) :
