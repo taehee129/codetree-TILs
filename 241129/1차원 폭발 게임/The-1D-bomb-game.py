@@ -7,7 +7,6 @@ lst = [
     for _ in range(n)
 ]
 
-# 
 
 bombs = lst[::-1]
 totalCnt = 0
@@ -37,7 +36,9 @@ while True :
     bombs =list(newBombs)
     if cnt == 0 :
         break
-        
+
+if m = 0 :
+    bombs = []    
 
 
 bombs = bombs[::-1]
