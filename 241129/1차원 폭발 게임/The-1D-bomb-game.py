@@ -14,12 +14,11 @@ while True :
     cnt = 0 
     sameCnt=1
     newBombs =bombs[:]
-    if m ==1 :
-        cnt =1 
-    for i in range(1,len(bombs)) :
+
+    for i in range(len(bombs)) :
         newBombs[i-cnt] = bombs[i]
 
-        if bombs[i] == bombs[i-1] :
+        if i>0 and bombs[i] == bombs[i-1] :
             sameCnt +=1 
         else :
             sameCnt = 1
