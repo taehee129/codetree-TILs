@@ -7,38 +7,35 @@ lst = [
     for _ in range(n)
 ]
 
-
+# 경계값을 항상 조심 1,처음,끝  마지막 값
 bombs = lst[::-1]
 totalCnt = 0
 while True :
     cnt = 0 
     sameCnt=1
     newBombs =bombs[:]
+    if m ==1 :
+        cnt =1 
     for i in range(1,len(bombs)) :
-        if bombs[i] == bombs[i-1]  :
-            sameCnt +=1 
-            
-            if i == len(bombs)-1 and sameCnt >=m :
-                cnt += sameCnt 
-                break
-        else :
-           
-            if sameCnt >=m:
-                #폰탄 떠드리고, 
-                cnt+=sameCnt
-              
-            sameCnt =1 
-  
         newBombs[i-cnt] = bombs[i]
 
-    
-    newBombs = newBombs[0:len(bombs)-cnt]
-    bombs =list(newBombs)
-    if cnt == 0 :
-        break
+        if bombs[i] == bombs[i-1] :
+            sameCnt +=1 
+        else :
+            sameCnt = 1
 
-if m == 1 :
-    bombs = []    
+        if sameCnt ==m :
+            cnt+=sameCnt
+        elif sameCnt >m :
+            cnt +=1 
+        
+    newBombs = newBombs[0:len(bombs)-cnt] 
+    bombs = list(newBombs)
+    if cnt == 0 or len(newBombs)==0 :
+        break
+    
+    
+                  
 
 
 bombs = bombs[::-1]
