@@ -37,7 +37,7 @@ while True :
     if cnt == 0 :
         break
 
-if m = 0 :
+if m == 0 :
     bombs = []    
 
 
