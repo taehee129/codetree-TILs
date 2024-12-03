@@ -10,7 +10,7 @@ k-=1
 
 row = 0 
 
-minRow = n
+minRow = n-1
 
 for i in range(k,k+m) :
     for j in range(n) :
