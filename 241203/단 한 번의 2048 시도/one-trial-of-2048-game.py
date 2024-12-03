@@ -113,6 +113,22 @@ def gravityU(matrix) :
     return new
 
 
+def change(matrix) : 
+    row = len(matrix)
+    col = len(matrix)
+
+    new = [
+        [0 for _ in range(row)] for _ in range(col)
+    ]
+
+    for i in range(row) :
+        for j in range(col) : 
+            new[j][3-i] = matrix[i][j]
+
+    return new 
+    
+
+
 matrix = [
     list(map(int,input().split()))
     for _ in range(4)
@@ -120,14 +136,21 @@ matrix = [
 
 d = input()
 
-if d =="L" :
-    matrix = gravityL(matrix)
-elif d== "R" :
-    matrix = gravityR(matrix)
-elif d=="U" :
-    matrix = gravityU(matrix)
-else :
-    matrix = gravityD(matrix)
+changeCnt ={
+    "R" : 1 ,
+    "U" : 2 , 
+    "L" : 3 ,
+    "D" : 0
+}
+
+
+for _ in range(changeCnt[d]) : 
+    matrix = change(matrix)
+matrix = gravityD(matrix) 
+
+
+for _ in range((4-changeCnt[d])%4) :
+    matrix = change(matrix)
 
 for lst in matrix :
     print(" ".join(map(str,lst)))
