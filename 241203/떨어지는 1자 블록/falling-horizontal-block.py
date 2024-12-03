@@ -10,12 +10,14 @@ k-=1
 
 row = 0 
 
-minRow = n-1
+minRow = n
+
 for i in range(k,k+m) :
-    for j in range(n-1,-1,-1) :
-        if lst[j][i] == 0 :
-            minRow = min(minRow, j)
+    for j in range(n) :
+        if lst[j][i] != 0 :
+            minRow = min(minRow, j-1)
             break
+
 
 for i in range(k,k+m) : 
     lst[minRow][i] = 1
