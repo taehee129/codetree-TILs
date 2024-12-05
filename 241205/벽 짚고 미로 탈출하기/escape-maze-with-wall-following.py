@@ -67,6 +67,7 @@ while True :
             if (not valid(x,y)) or grid[x][y] !=brick :
                 break
             x,y,d= left(x,y,d)
+            cnt+=1
 
         # print("left"+str(x)+str(y))
         
