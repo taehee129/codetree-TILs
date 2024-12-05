@@ -57,6 +57,7 @@ while True :
         break 
     
     forwardx,forwardy,forwardd= forward(x,y,d)
+    cnt+=1
     # print("forward", end ="")
     # print(forwardx,forwardy)
     if valid(forwardx,forwardy) and grid[forwardx][forwardy] == brick : # 앞에 벽돌 이 있다면 
