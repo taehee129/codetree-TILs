@@ -49,7 +49,7 @@ cnt=0
 
 
 while True : 
-
+    
     if not valid(x,y) :
         break
     if cnt !=0 and x==orginX and y == originY : 
@@ -57,9 +57,17 @@ while True :
         break 
     
     forwardx,forwardy,forwardd= forward(x,y,d)
-    cnt+=1
+    # print("forward", end ="")
+    # print(forwardx,forwardy)
     if valid(forwardx,forwardy) and grid[forwardx][forwardy] == brick : # 앞에 벽돌 이 있다면 
+        
         x,y,d = left(x,y,d)
+        while True :
+            if (not valid(x,y)) or grid[x][y] !=brick :
+                break
+            x,y,d= left(x,y,d)
+
+        # print("left"+str(x)+str(y))
         
         continue
 
@@ -68,6 +76,8 @@ while True :
     if valid(rightx,righty) and grid[rightx][righty] != brick : #
         x,y,d= rightx,righty,rightd
         cnt+=1
+        # print("right", end ="")
+        # print(x,y)
     else :
         x,y,d = forwardx,forwardy,forwardd
 
