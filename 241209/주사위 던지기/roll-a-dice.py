@@ -74,7 +74,7 @@ r-=1
 c -=1
 grid[r][c] = dice[0][0]
 
-dx,dy = [0,0,1,-1],[-1,1,0,0]
+dx,dy = [0,0,-1,1],[-1,1,0,0]
 
 for s in d : 
     if s == "L" : 
@@ -104,6 +104,8 @@ for s in d :
 
 answer = 0
 for i in range(n) :
+    #print(grid[i])
     for j in range(n) :
         answer +=grid[i][j]
+        
 print(answer)
