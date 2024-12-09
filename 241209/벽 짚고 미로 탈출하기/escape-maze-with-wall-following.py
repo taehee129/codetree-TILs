@@ -52,7 +52,7 @@ leftCnt=0
 while True : 
     
     if leftCnt == 4 :
-        cmt =-1
+        cnt =-1
         break
     if not valid(x,y) :
         break
