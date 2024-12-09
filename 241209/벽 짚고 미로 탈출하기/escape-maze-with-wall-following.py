@@ -71,12 +71,12 @@ while True :
         continue
     leftCnt=0
     x,y,d = forward(x,y,d)
-    print(x,y,d)
+    
     cnt+=1
     rightx ,righty, rightd = right(x,y,d)
     if valid(rightx,righty) and grid[rightx][righty] != brick : #
         x,y,d = right(x,y,d)
-        print(x,y,d)
+        
         cnt+=1
         continue
 
