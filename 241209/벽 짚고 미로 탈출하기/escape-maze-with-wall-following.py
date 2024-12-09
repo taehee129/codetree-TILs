@@ -48,6 +48,7 @@ d = 0
 cnt=0
 
 leftCnt=0
+sameCnt=0
 
 while True : 
     
@@ -57,8 +58,10 @@ while True :
     if not valid(x,y) :
         break
     if cnt !=0 and x==orginX and y == originY : 
-        cnt =-1
-        break 
+        sameCnt +=1
+        if sameCnt ==2 :
+            cnt=-1
+            break 
     forwardx,forwardy,forwardd= forward(x,y,d)
 
     if valid(forwardx,forwardy) and grid[forwardx][forwardy] == brick : # 앞에 벽돌 이 있다면 
@@ -68,12 +71,12 @@ while True :
         continue
     leftCnt=0
     x,y,d = forward(x,y,d)
-
+    print(x,y,d)
     cnt+=1
     rightx ,righty, rightd = right(x,y,d)
     if valid(rightx,righty) and grid[rightx][righty] != brick : #
         x,y,d = right(x,y,d)
-        
+        print(x,y,d)
         cnt+=1
         continue
 
