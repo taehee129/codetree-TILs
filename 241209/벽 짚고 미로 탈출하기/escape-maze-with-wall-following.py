@@ -47,10 +47,13 @@ brick = "#"
 d = 0
 cnt=0
 
+leftCnt=0
 
 while True : 
     
-  
+    if leftCnt == 4 :
+        cmt =-1
+        break
     if not valid(x,y) :
         break
     if cnt !=0 and x==orginX and y == originY : 
@@ -61,8 +64,9 @@ while True :
     if valid(forwardx,forwardy) and grid[forwardx][forwardy] == brick : # 앞에 벽돌 이 있다면 
         
         d = left(d)
-        
+        leftCnt+=1
         continue
+    leftCnt=0
     x,y,d = forward(x,y,d)
 
     cnt+=1
