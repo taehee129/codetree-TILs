@@ -58,8 +58,8 @@ for _ in range(m) :
     grid[x][y] =1
 
 # 전부 움직였거나, 겹치거나 , 격자를 벗어낫거나 
-for lst in grid :
-    print(lst)
+# for lst in grid :
+#     print(lst)
 endFlag = False
 for _ in range(k) :
     d,p = tuple(input().split())
