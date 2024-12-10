@@ -35,7 +35,8 @@ def move(snake, d) :
     x,y = x+dx[mapper[d]], y +dy[mapper[d]]
     second +=1
     
-    if x<0 or x>=n or y<=0 or y>=n :
+    if x<0 or x>=n or y<0 or y>=n :
+        #print(x,y)
         return False 
     snake.append([x,y])
     history[x][y] =1
@@ -45,8 +46,8 @@ def move(snake, d) :
         length +=1
         grid[x][y] =0
 
-    if [x,y] in snake[:length-2] :
-        # print(x,y)
+    if [x,y] in snake[:length-1] :
+        #print(x,y)
         return False 
     return snake
 
@@ -73,7 +74,7 @@ for _ in range(k) :
             break
         if checkEnd(history) :
             endFlag =True
-
+            #print("check")
             break
     if endFlag :
         break
