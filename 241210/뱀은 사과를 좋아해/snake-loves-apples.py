@@ -34,10 +34,6 @@ def move(snake, d) :
     x,y = tuple(snake[length-1])
     x,y = x+dx[mapper[d]], y +dy[mapper[d]]
     second +=1
-
-    if [x,y] in snake :
-        # print(x,y)
-        return False 
     
     if x<0 or x>=n or y<=0 or y>=n :
         return False 
@@ -47,7 +43,11 @@ def move(snake, d) :
         snake= snake[1:]
     else :
         length +=1
-   
+        grid[x][y] =0
+
+    if [x,y] in snake[:length-2] :
+        # print(x,y)
+        return False 
     return snake
 
 for _ in range(m) :
