@@ -47,8 +47,12 @@ for _ in range(t) :
             if bomb[i][j] ==1 : 
                 x,y = explosion(i,j)
                 newBomb[x][y] +=1 
-                if newBomb[x][y]>=2 :
-                    newBomb[x][y]= 0
+
+    for i in range(n) :
+        for j in range(n) :
+            if bomb[i][j] >=2 :
+                bomb[i][j] =0
+    
     bomb = [
         lst[:] for lst in newBomb
     ]
