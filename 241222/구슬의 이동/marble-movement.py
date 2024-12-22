@@ -11,14 +11,14 @@ mapper={
     "U" : 2, 
     "L" : 3
 }
-for _ in range(m) : 
+for i in range(m) : 
     l = input().split()
     r,c,d,v = tuple(l) 
     r = int(r) -1
     c = int(c) -1
     d = mapper[d]
     v = int(v)
-    lst.append([r,c,d,v])
+    lst.append([r,c,d,v,i])
 
 for i in range(n) :
     for j in range(m) :
@@ -59,9 +59,10 @@ def explode(grid,k,lst) :
     for i in temp :
         x,y = i[0],i[1]
         cnt = 0
-
+        #printGrid(lst)
         for j in range(len(lst)-1,-1,-1) :
             if lst[j][0] == x and lst[j][1] == y : 
+               
                 del lst[j]
                 cnt +=1 
             if cnt ==grid[x][y] - k :
@@ -71,7 +72,7 @@ def explode(grid,k,lst) :
 
 
 
-lst.sort(key= lambda x:x[2])
+lst.sort(key= lambda x:(x[3],x[4]),reverse=True)
 
 for _ in range(t) : 
     grid = [
@@ -79,12 +80,13 @@ for _ in range(t) :
     ]
     newLst = []
     for l in lst :
-        r,c,d,v = tuple(l)
+        r,c,d,v,_ = tuple(l)
         x,y,d = move(r,c,d,v)
         grid[x][y] +=1
         newLst.append([x,y,d,v])
-    
+
     lst = explode(grid,k,newLst)
 
-
+# printGrid(grid)
+# print(lst)
 print(len(lst))
