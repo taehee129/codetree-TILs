@@ -80,10 +80,10 @@ for _ in range(t) :
     ]
     newLst = []
     for l in lst :
-        r,c,d,v,_ = tuple(l)
+        r,c,d,v,idx = tuple(l)
         x,y,d = move(r,c,d,v)
         grid[x][y] +=1
-        newLst.append([x,y,d,v])
+        newLst.append([x,y,d,v,idx])
 
     lst = explode(grid,k,newLst)
 
