@@ -27,6 +27,9 @@ def dfs(x,y) :
         dfs(newx,newy)
     
 
-dfs(0,0)
+if dfs(0,0) :
+    print(1)
+else :
+    print(0)
 
 print(result)
