@@ -12,7 +12,7 @@ def in_range(x,y) :
 def dfs(x,y) : 
     if x==n-1 and y == m-1 : 
         return True              
-    dxs,dys = [0,1], [1,0] 
+    dxs,dys = [1,0], [0,1] 
 
     for dx,dy in zip(dxs,dys) : 
         newx,newy = x+dx , y+dy 
