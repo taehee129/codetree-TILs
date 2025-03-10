@@ -12,7 +12,7 @@ def in_range(x,y) :
 def dfs(x,y) :
     global result 
     if x==n-1 and y == m-1 : 
-        result = 1      
+        return True      
     dxs,dys = [1,0], [0,1] 
     visited[x][y] = 1
     for dx,dy in zip(dxs,dys) : 
