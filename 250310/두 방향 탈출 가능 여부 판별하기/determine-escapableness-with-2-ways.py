@@ -1,5 +1,5 @@
 n,m = tuple(map(int,input().split()))
-
+result = 0
 grid = [list(map(int,input().split())) for _ in range(n)]
 
 visited  = [[0 for _ in range(m)] for _ in range(n)] 
@@ -9,27 +9,24 @@ def in_range(x,y) :
         return False 
     return True
 
-def dfs(x,y) : 
+def dfs(x,y) :
+    global result 
     if x==n-1 and y == m-1 : 
-        return True              
+        result = 1      
     dxs,dys = [1,0], [0,1] 
-
+    visited[x][y] = 1
     for dx,dy in zip(dxs,dys) : 
         newx,newy = x+dx , y+dy 
         if not in_range(newx,newy) :
             continue
-        if grid[newx][newy] == 0 :
+        if grid[newx][newy] == 0 :#if there is snake
             continue 
-        if visited[newx][newy] ==1 : 
+        if visited[newx][newy] ==1 : # already visited 
             continue
         
-        visited[newx][newy] = 1  
-        return dfs(newx,newy)
+        dfs(newx,newy)
     
 
-visited[0][0] =1 
+dfs(0,0)
 
-if dfs(0,0) : 
-    print(1)
-else :
-    print(0)
+print(result)
