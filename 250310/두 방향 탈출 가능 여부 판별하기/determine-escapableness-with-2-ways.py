@@ -2,7 +2,7 @@ n,m = tuple(map(int,input().split()))
 
 grid = [list(map(int,input().split())) for _ in range(n)]
 
-visited  = [[0 for _ in range(n)] for _ in range(m)] 
+visited  = [[0 for _ in range(m)] for _ in range(n)] 
 
 def in_range(x,y) : 
     if x<0 or x>=n or y<0 or y>=m : 
