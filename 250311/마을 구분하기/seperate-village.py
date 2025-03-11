@@ -11,21 +11,22 @@ def in_range(x,y) :
 
 def dfs(x,y) : 
 
+    if not in_range(x,y) :
+        return 0
+    
+    if visited[x][y] ==1 :
+        return 0
+    
+    if grid[x][y] ==0 : 
+        return 0 
+    
+
     dxs, dys = [1,0,-1,0],[0,1,0,-1]
     visited[x][y] = 1 
     cnt =1
-    for dx,dy in zip(dxs,dys) :
-        newx,newy = x+dx, y+dy
 
-        if not in_range(newx,newy) :
-            continue 
-        
-        if visited[newx][newy] ==1 :
-            continue
-        
-        if grid[newx][newy] ==0 : 
-            continue 
-        
+    for dx,dy in zip(dxs,dys) :
+        newx,newy = x+dx, y+dy        
         cnt += dfs(newx,newy)
     
     return cnt
@@ -36,10 +37,10 @@ result = []
 
 for i in range(n) :
     for j in range(n) :
-        if visited[i][j] ==1 or grid[i][j] ==0 : 
-            continue
-        
-        result.append(dfs(i,j))
+                
+        val = dfs(i,j)
+        if val !=0 :
+            result.append(val)
 
 result.sort()
 
