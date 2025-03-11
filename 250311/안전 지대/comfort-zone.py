@@ -50,9 +50,10 @@ for k in range(max_k,0,-1) :
     visited = [[0 for _ in range(m)] for _ in range(n)]
 
     val = search(k)
-    if max_cnt < val :
+    if max_cnt <= val :
         max_cnt = val 
         result = k 
+
 
 print(result, max_cnt)
 
