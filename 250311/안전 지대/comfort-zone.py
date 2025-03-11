@@ -38,14 +38,14 @@ def search(k) :
     return cnt
             
 
-max_k =0 
+max_k =1 
 
 for i in range(n) : 
     for j in range(m) : 
         max_k = max(max_k, grid[i][j])
 
 max_cnt = 0
-result = 0
+result = 1
 for k in range(max_k,0,-1) :
     visited = [[0 for _ in range(m)] for _ in range(n)]
 
