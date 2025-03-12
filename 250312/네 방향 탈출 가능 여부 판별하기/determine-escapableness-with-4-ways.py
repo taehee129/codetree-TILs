@@ -16,13 +16,10 @@ q = [(0,0)]
 
 dxs, dys = [1,0,-1,0],[0,1,0,-1]
 while len(q) >0 : 
-    
     x,y = q.pop()
     if (x,y) == (n-1,m-1) : 
         flag = 1 
         break
-    
-    visited[x][y] = 1
 
     for dx,dy in zip(dxs,dys) : 
 
@@ -32,10 +29,10 @@ while len(q) >0 :
             continue 
         if grid[newx][newy] == 0 :
             continue 
-        if visited[newx][newy] : 
+        if visited[newx][newy] ==1: 
             continue
 
         q.insert(0,(newx,newy))
-
+        visited[newx][newy] = 1
 
 print(flag)
