@@ -19,7 +19,7 @@ def bfs(x,y) :
     while len(q) >0 : 
 
         x,y = q.pop()
-        #print(x,y)
+
         for dx,dy in zip(dxs,dys) : 
             nx,ny = x+dx,y+dy 
             
@@ -33,14 +33,8 @@ def bfs(x,y) :
             q.insert(0,(nx,ny))
             visited[nx][ny] = 1 
             
-            if maxVal < grid[nx][ny] :
-                rx,ry = nx,ny 
-                maxVal = grid[nx][ny]
-            elif maxVal == grid[nx][ny] : 
-                if nx < rx : 
-                    rx,ry = nx,ny
-                elif nx == rx and ny < ry : 
-                    rx,ry = nx,ny
+            if (maxVal, -rx,-ry) < (grid[nx][ny],-nx,-ny):
+                (maxVal, rx,ry) =  (grid[nx][ny],nx,ny)
              
     return rx,ry 
 
