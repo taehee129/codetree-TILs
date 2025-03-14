@@ -7,7 +7,16 @@ def in_range(x,y) :
     if x<0 or x>=n or y<0 or y>=m : 
         return False
     return True
+def melt(x,y) :
+    dxs,dys= [1,0,-1,0], [0,1,0,-1]
+    
+    for dx,dy in zip(dxs,dys) : 
+        nx,ny = x+dx,y+dy 
 
+        if not in_range(nx,ny) : 
+            continue 
+        if grid[nx][ny] == 1 :
+            new_grid[nx][ny] = 0
 def bfs(start_x,start_y) : 
     
     q = [(start_x,start_y)]
@@ -24,6 +33,12 @@ def bfs(start_x,start_y) :
                 continue
             if visited[nx][ny] : 
                 continue
+            if grid[nx][ny] == 1 :
+                continue
+            
+            q.insert(0,(nx,ny))
+            visited[nx][ny] = 1 
+            melt(nx,ny)
 
 
 def check(x,y) : 
@@ -40,16 +55,6 @@ def check(x,y) :
     
     return False
 
-def melt(x,y) :
-    dxs,dys= [1,0,-1,0], [0,1,0,-1]
-    
-    for dx,dy in zip(dxs,dys) : 
-        nx,ny = x+dx,y+dy 
-
-        if not in_range(nx,ny) : 
-            continue 
-        if grid[nx][ny] == 1 :
-            new_grid[nx][ny] = 0
 
 def count_ice(grid) : 
     cnt=0
@@ -60,15 +65,9 @@ def count_ice(grid) :
 time =0
 while True : 
     time +=1
-    new_grid = [grid[i][:] for i in range(n) ]
-    for i in range(n) : 
-        for j in range(m) :
-            if grid[i][j] == 0 and check(i,j) :
-                melt(i,j)
-    
-    # print('-'*20)
-    # for i in new_grid :
-    #     print(i)
+    new_grid = [grid[i][:] for i in range(n)]
+    visited = [[0 for _ in range(m)] for _ in range(n)]
+    bfs(0,0)
 
     if count_ice(new_grid) == 0 : 
         
