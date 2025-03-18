@@ -15,8 +15,5 @@ def choose(idx) :
         answer_list.pop()
 
 
-for i in range(0,n) :
-    answer_list.append(nums[i])
-    choose(i+1)
-    answer_list.pop()
+choose(0)
     
