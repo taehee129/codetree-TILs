@@ -12,7 +12,7 @@ def op(num,op) :
     elif op ==3 :
         return int(num/3)
 
-visited = [False]*1000000
+visited = [False]*10000000
 
 def bfs(num) :
 
