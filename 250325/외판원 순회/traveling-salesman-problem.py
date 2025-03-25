@@ -38,7 +38,8 @@ def permuation() :
         if len(select) >=1 and grid[select[len(select)-1]][nums[i]] ==0:
             continue
 
-            
+        if len(select) == n-2 and grid[nums[i]][0] ==0: 
+            continue
 
         select.append(nums[i])
         visited[i] = True 
