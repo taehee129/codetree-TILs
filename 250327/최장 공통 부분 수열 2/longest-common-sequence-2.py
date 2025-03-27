@@ -17,7 +17,7 @@ for i in range(1,m) :
         dp[0][i] = a[0]
 
 for i in range(1,n) : 
-    dp[i][0] = dp[i][0]
+    dp[i][0] = dp[i-1][0]
 
     if a[i] == b[0] :
         dp[i][0] = a[i]
@@ -29,5 +29,8 @@ for i in range(1,n) :
         else : 
             dp[i][j] = dp[i-1][j] if len(dp[i-1][j]) >= len(dp[i][j-1]) else dp[i][j-1]
 
+
+for lst in dp :
+    print(lst)
 
 print(dp[n-1][m-1])
