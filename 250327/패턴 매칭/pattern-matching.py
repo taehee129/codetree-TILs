@@ -26,8 +26,7 @@ for i in range(1,n) :
             dp[i][j] = True
 
 
-for lst in dp :
-    print(lst)
+
 if dp[n-1][m-1]:
     print('true')
 else : 
