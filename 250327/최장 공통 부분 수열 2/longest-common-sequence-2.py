@@ -27,7 +27,7 @@ for i in range(1,n) :
         if a[i] == b[j] : 
             dp[i][j] = dp[i-1][j-1] + a[i]
         else : 
-            dp[i][j] = dp[i-1][j] if len(dp[i-1][j]) > len(dp[i][j-1]) else dp[i][j-1]
+            dp[i][j] = dp[i-1][j] if len(dp[i-1][j]) >= len(dp[i][j-1]) else dp[i][j-1]
 
 
 print(dp[n-1][m-1])
