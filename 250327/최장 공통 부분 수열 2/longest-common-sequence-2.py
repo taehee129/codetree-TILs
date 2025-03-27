@@ -30,7 +30,7 @@ for i in range(1,n) :
             dp[i][j] = dp[i-1][j] if len(dp[i-1][j]) >= len(dp[i][j-1]) else dp[i][j-1]
 
 
-for lst in dp :
-    print(lst)
+# for lst in dp :
+#     print(lst)
 
 print(dp[n-1][m-1])
