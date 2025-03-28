@@ -40,8 +40,8 @@ def rect(r,c,x,y) :
 max_val =0
 for i in range(n) :
     for j in range(n) : 
-        for x in range(n) :
-            for y in range(n) : 
+        for x in range(1,n) :
+            for y in range(1,n) : 
                 val = rect(i,j,x,y)
                 if val :
                     max_val = max(val,max_val)
