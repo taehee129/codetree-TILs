@@ -10,10 +10,10 @@ for num in nums :
         d[num]=True
     
 nums = list(d.keys())
-
+end = len(nums)
 cnt =0
-for i in range(n) :
-    for j in range(i+1,n) :
+for i in range(end) :
+    for j in range(i+1,end) :
         if nums[i] +nums[j] == k :
             cnt +=1
 
