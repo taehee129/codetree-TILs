@@ -16,4 +16,4 @@ for num in lst :
     if num in d :
         print(d[num], end = ' ')
     else :
-        print(0)
+        print(0, end = ' ')
