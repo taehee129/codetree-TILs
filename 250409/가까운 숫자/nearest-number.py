@@ -1,9 +1,9 @@
 n = int(input())
 
 nums = list(map(int,input().split()))
+import sys 
 
-min_dis = 1000000
-
+min_dis = sys.maxsize
 from sortedcontainers import SortedSet 
 
 s = SortedSet() 
