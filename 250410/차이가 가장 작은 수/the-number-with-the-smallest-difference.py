@@ -11,7 +11,7 @@ s = SortedSet(nums)
 
 import sys
 
-print(nums)
+
 min_diff  = sys.maxsize
 for num in nums :
     num1 = num +m 
