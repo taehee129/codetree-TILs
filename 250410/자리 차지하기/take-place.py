@@ -11,9 +11,12 @@ nums.sort()
 cnt = 0
 end = len(nums)-1
 for i in range(m,0,-1) : 
+
     if nums[end] >= i :
         cnt +=1 
         end -=1
+    if end == -1 :
+        break
        
 
 print(cnt)
