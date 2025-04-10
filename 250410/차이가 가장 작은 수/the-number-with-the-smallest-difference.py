@@ -11,13 +11,15 @@ s = SortedSet(nums)
 
 import sys
 
+print(nums)
 min_diff  = sys.maxsize
 for num in nums :
     num1 = num +m 
 
     ret= s.bisect_left(num1)
 
-    if ret != n :
+ 
+    if ret != len(s) :
         min_diff = min(min_diff, s[ret]-num)
     
     
@@ -28,8 +30,12 @@ for num in nums :
         if ret2 != 0 :
             min_diff = min(min_diff, num-s[ret2-1])
     
-print(min_diff)
 
+
+if min_diff == sys.maxsize :
+    print(-1 )
+else :
+    print(min_diff)
 
     
     
