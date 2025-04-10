@@ -4,23 +4,19 @@ from sortedcontainers import SortedSet
 n,m = map(int,input().split())
 
 nums =  list(map(int,input().split()))
-nums.sort()
 
-# 빈 자리이면서 앉을 수 있는 자리의 최댓값 
+chairs = SortedSet([i+1 for i in range(m)])
 
 cnt = 0
-end = len(nums)-1
-for i in range(m,0,-1) : 
-
-    if nums[end] >= i :
-        cnt +=1 
-        end -=1
-    if end == -1 :
+for num in nums :  
+    idx = chairs.bisect_right(num)
+    if idx == 0 :
         break
-       
+    chairs.remove(chairs[idx-1])
+    cnt +=1
+
 
 print(cnt)
 
-# nums의 최댓값이 i 보다 크거나 같으면 앉기 
-# 작다면 ? i는 통과
+        
     
