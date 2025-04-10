@@ -9,7 +9,7 @@ nums =  SortedSet(map(int,input().split()))
 
 cnt = 0
 for i in range(m,0,-1) : 
-    if nums[-1] >= i :
+    if len(nums)>0 and nums[-1] >= i :
         cnt +=1 
         nums.remove(nums[-1] )
 
