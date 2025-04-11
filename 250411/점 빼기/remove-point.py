@@ -8,7 +8,7 @@ coordinate = [tuple(map(int,input().split())) for _ in range(n)]
 s = SortedSet(coordinate)
 
 
-for _ in range(n) : 
+for _ in range(m) : 
     num = int(input())
     idx = s.bisect_left((num,0))
 
