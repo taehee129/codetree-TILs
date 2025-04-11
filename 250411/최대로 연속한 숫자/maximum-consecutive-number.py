@@ -6,18 +6,21 @@ s = SortedSet()
 
 s.add((0,n))
 
+sum_set = SortedSet()
+sum_set.add(n-0+1)
 for num in nums :
     idx = s.bisect_right((num,0))
     a,b = s[idx-1]
-
+    
     s.remove((a,b))
+    sum_set.remove(b-a+1)
     if a <= num-1 :
         s.add((a,num-1))
+        sum_set.add(num-1-a+1)
     if b>= num+1 :
         s.add((num+1,b))
-
-    max_len = 0
-    for x,y in s : 
-        max_len= max(max_len, y-x+1)
-
-    print(max_len)
+        sum_set.add(b-num-1+1)
+    
+    print(sum_set[-1])
+    
+    
