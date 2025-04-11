@@ -10,9 +10,8 @@ sum_set = SortedSet()
 sum_set.add((n-0+1,0,n))
 for num in nums :
 
-    idx = s.bisect_right((num,0))
+    idx = s.bisect_right((num,n+1))
     a,b = s[idx-1]
-    
     s.remove((a,b))
     sum_set.remove((b-a+1,a,b))
     if a <= num-1 :
@@ -22,7 +21,8 @@ for num in nums :
         s.add((num+1,b))
         sum_set.add((b-num-1+1,num+1,b))
     
-    
+    # print(num,idx)
+    # print(s,sum_set)
     print(sum_set[-1][0])
     
     
