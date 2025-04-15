@@ -7,15 +7,33 @@ import sys
 
 MIN_SIZE = 0
 max_avg = MIN_SIZE
-for k in range(1,n-1) : 
-    temp = [] 
-    for i in range(k,n) :
-        h.heappush(temp,nums[i])    
 
-    h.heappop(temp)
-    max_avg = max(max_avg, sum(temp)/len(temp))
-    #print(k,temp,max_avg)
+hq =[]
+for num in nums :
+    h.heappush(hq,num)
+    
+s = sum(nums)
+for k in range(0,n-2):
+    num = nums[k]
+    s -= num
+
+    if num == hq[0] : 
+        h.heappop(hq)
+   
+    max_avg = max(max_avg, (s-hq[0])/(n-(k+2)))
+ 
 print(f"{max_avg:.2f}")
+
+    
+
+    
+    
+
+
+    
+
+    
+
 
 
     
