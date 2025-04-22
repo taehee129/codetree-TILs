@@ -7,9 +7,9 @@ hq = []
 
 for i in range(n) :
     s,e = tuple(map(int,input().split()))
-    heapq.heappush(hq,(s,e,i))
+    heapq.heappush(hq,(s,i,e))
 
-gs,ge,gi = heapq.heappop(hq)
+gs,gi,ge = heapq.heappop(hq)
 
 wq =[]
 
@@ -21,7 +21,7 @@ while hq :
     # print(gs,ge,gi)
     # print(max_wt)
     # print('*'*50)
-    s,e,i = hq[0]
+    s,i,e = hq[0]
 
     if s < (gs+ge) : 
         heapq.heappush(wq,(i,s,e))
@@ -35,7 +35,7 @@ while hq :
             gs,ge,gi = s,e,i
            
         else : 
-            gs,ge,gi = heapq.heappop(hq)
+            gs,gi,ge = heapq.heappop(hq)
             out_time +=e
 
 # print('-'*50)
