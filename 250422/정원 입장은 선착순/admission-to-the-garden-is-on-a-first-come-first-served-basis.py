@@ -20,7 +20,6 @@ while hq :
     # print(wq)
     # print(gs,ge,gi)
     # print(max_wt)
-    # print('*'*50)
     s,i,e = hq[0]
 
     if s < (gs+ge) : 
@@ -33,15 +32,19 @@ while hq :
             max_wt = max(max_wt,out_time-s)
             out_time +=e
             gs,ge,gi = s,e,i
+            #print(i,s,e,out_time)
            
         else : 
             gs,gi,ge = heapq.heappop(hq)
-            out_time +=e
+            out_time = gs+ge
+            
+    #print('*'*50)
 
-# print('-'*50)
+#print('-'*50)
 for _ in range(len(wq)) : 
-
+    #print(wq)
     i,s,e = heapq.heappop(wq)
+    #print(out_time,s)
     max_wt = max(max_wt,out_time-s)
     out_time+=e
     gs,ge,gi = s,e,i
