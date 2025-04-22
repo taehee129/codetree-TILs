@@ -41,7 +41,7 @@ while hq :
 
 #print('-'*50)
 for _ in range(len(wq)) : 
-    print(wq)
+    #print(wq)
     i,s,e = heapq.heappop(wq)
     # print(out_time,s)
     max_wt = max(max_wt,out_time-s)
