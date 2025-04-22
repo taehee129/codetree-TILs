@@ -46,7 +46,7 @@ for _ in range(len(wq)) :
     i,s,e = heapq.heappop(wq)
     #print(out_time,s)
     max_wt = max(max_wt,out_time-s)
-    out_time+=e
+    out_time = max(out_time+e, s+e)
     gs,ge,gi = s,e,i
 
 
