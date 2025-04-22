@@ -30,7 +30,7 @@ while hq :
         if wq :
             i,s,e = heapq.heappop(wq)
             max_wt = max(max_wt,out_time-s)
-            out_time +=e
+            out_time = max(out_time+e, s+e)
             gs,ge,gi = s,e,i
             #print(i,s,e,out_time)
            
