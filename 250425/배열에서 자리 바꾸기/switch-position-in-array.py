@@ -41,7 +41,18 @@ def insert_next(node1,node2) :
         link(node2,node1.next)
 
 def swap(a,b,c,d) : 
-    pass
+    c_prev = c.prev 
+    d_next = d.next
+
+    c.prev = a.prev
+    if a.prev is not None :
+        a.prev.next =c 
+    
+    d.next = a 
+    a.prev = d
+    b.next = d_next 
+    if d_next is not None :
+        d_next.prev = b
 
 for _ in range(q) :
     a,b,c,d = map(int,input().split())
@@ -52,32 +63,10 @@ for _ in range(q) :
     d = linked[d-1]
 
     if (b.next is not None and b.next.data == c.data)  :
-        c_prev = c.prev 
-        d_next = d.next
-
-        c.prev = a.prev
-        if a.prev is not None :
-            a.prev.next =c 
-        
-        d.next = a 
-        a.prev = d
-        b.next = d_next 
-        if d_next is not None :
-            d_next.prev = b
-        
+        swap(a,b,c,d)
         
     elif (d.next is not None and d.next.data == a.data):
-        a.prev = c.prev
-        if c.prev is not None :
-            c.prev.next =a 
-        
-        b.next = c 
-        c.prev = b 
-
-        d.next = b.next 
-        if b.next is not None :
-            b.next.prev = d
-                   
+        swap(c,d,a,b)
     else : 
         a_prev = a.prev
         b.next = b.next
