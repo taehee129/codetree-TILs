@@ -88,6 +88,8 @@ for _ in range(q) :
         else : 
             head2 = head 
             tail2 = tail 
+            head = tail = None
+            
 
         shelves[i][0] , shelves[i][1] = head,tail 
         shelves[j][0] , shelves[j][1] = head2,tail2
@@ -103,7 +105,9 @@ for _ in range(q) :
             tail2 = tail 
             tail = head = None 
         else : 
-            tail = head = None 
+            head2 = head 
+            tail2 = tail 
+            head = tail = None
 
         shelves[i][0] , shelves[i][1] = head,tail 
         shelves[j][0] , shelves[j][1] = head2,tail2
