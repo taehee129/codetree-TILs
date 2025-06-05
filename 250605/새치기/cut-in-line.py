@@ -77,7 +77,7 @@ for _ in range(q) :
             if a.next is None : 
                 lines[line] = None
             else : 
-                chage_head(a,b)
+                chage_head(a,a.next)
 
     elif num == 3 : 
         _,a,b,c = map(int,input_str.split())
