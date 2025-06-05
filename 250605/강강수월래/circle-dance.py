@@ -18,12 +18,26 @@ for _ in range(m) :
     cnt = lst[0]
     lst = lst[1:]
 
-    for i in range(cnt-1) : 
-        connect(students[lst[i]-1],students[lst[i+1]-1])
-    
-    connect(students[lst[cnt-1]-1],students[lst[0]-1])
+    for i in range(cnt) : 
+        data = lst[i]
+        node = Node(data-1)
+        students[data-1] = node 
+        if i != 0 : 
+            connect(students[lst[i-1]-1],students[lst[i]-1])
 
-node = students[1]
+    connect(students[lst[cnt-1]-1],students[lst[0]-1])    
+
+# for _ in range(m) : 
+#     lst = list(map(int,input().split()))
+#     cnt = lst[0]
+#     lst = lst[1:]
+
+#     for i in range(cnt-1) : 
+#         connect(students[lst[i]-1],students[lst[i+1]-1])
+    
+#     connect(students[lst[cnt-1]-1],students[lst[0]-1])
+
+# node = students[1]
 
 for _ in range(q) : 
     input_lst= input().split()
@@ -75,6 +89,7 @@ for _ in range(q) :
             node = node.prev 
             if node.data == min_node : 
                 break 
+
 
 
 
