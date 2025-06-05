@@ -55,6 +55,7 @@ for _ in range(q) :
         if a.head is not None : 
             if a.next is None : 
                 line = a.head 
+                a.head = None
                 lines[line] = None
             else : 
                 chage_head(a,b)
@@ -86,7 +87,8 @@ for _ in range(q) :
 
         if a.head is not None : 
             if b.next is None : 
-                line = a.head 
+                line = a.head
+                a.head = None
                 lines[line]= None 
             else : 
                 chage_head(a,b.next)
