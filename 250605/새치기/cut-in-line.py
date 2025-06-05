@@ -18,11 +18,6 @@ people = [Node(i) for i in range(n)]
 
 lines = [] 
 
-def chage_head(a,b) : 
-    line  = a.head 
-    a.head = None 
-    b.head = line 
-    lines[line] = b
 
 for k in range(m) : 
     lst = list(map(int,input().split()))
@@ -42,6 +37,11 @@ for k in range(m) :
     lines.append(people[lst[0]-1])
 
 
+def chage_head(a,b) : 
+    line  = a.head 
+    a.head = None 
+    b.head = line 
+    lines[line] = b
 
 for _ in range(q) : 
     input_str = input()
@@ -57,8 +57,8 @@ for _ in range(q) :
                 line = a.head 
                 a.head = None
                 lines[line] = None
-            else : 
-                chage_head(a,b)
+            else :           
+                chage_head(a,a.next)
     
         connect(a.prev,a.next)
     
