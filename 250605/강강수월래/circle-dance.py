@@ -11,7 +11,7 @@ def connect(n1,n2) :
         n2.prev= n1
 n,m,q = map(int,input().split())
 
-students = [Node(i) for i in range(n)]
+students = dict()
 
 for _ in range(m) : 
     lst = list(map(int,input().split()))
