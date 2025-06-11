@@ -4,6 +4,7 @@ points = list(map(int,input().split()))
 
 lines = [tuple(map(int,input().split())) for _ in range(m)]
 
+points.sort()
 
 def lower_bound(target) : 
     left = 0 
@@ -12,8 +13,6 @@ def lower_bound(target) :
 
     while left <= right :
         mid = (left+right) // 2 
-        # print(left,right)
-        # print("mid : " + str(mid))
 
         if points[mid] == target : 
          
@@ -21,8 +20,7 @@ def lower_bound(target) :
         elif points[mid] > target :
             min_idx = min(min_idx,mid)
             right = mid -1 
-            # print("mid : " + str(mid))
-            # print(min_idx)
+
         else : 
         
             left = mid +1 
