@@ -24,7 +24,7 @@ questions = list(map(int,input().split()))
 for num in questions : 
     ans = upper_bound(num) 
 
-    if num != nums[ans]:
+    if num==n or num != nums[ans]:
         print(-1) 
     else : 
         print(ans+1)
