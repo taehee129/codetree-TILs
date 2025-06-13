@@ -11,10 +11,12 @@ while left <= right :
     val = mid-(mid//3)-(mid//5)+(mid//15)
     #print(val, mid, left, right)
     if val == n : 
-        ans = mid   
-        if ans%3==0 or ans%5==0 : 
-            ans -=1
-        break
+        if mid%3==0 or mid%5==0 : 
+            right = mid -1
+          
+        else : 
+            ans = mid
+            break
     elif val > n : 
         right = mid -1 
     else : 
