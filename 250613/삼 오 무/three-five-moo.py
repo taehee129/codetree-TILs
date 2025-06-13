@@ -12,7 +12,7 @@ while left <= right :
 
     if val == n : 
         ans = mid   
-        if ans%3==0 or ans%5==5 : 
+        if ans%3==0 or ans%5==0 : 
             ans -=1
         break
     elif val > n : 
