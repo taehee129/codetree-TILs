@@ -12,8 +12,7 @@ while left <= right :
     #print(val, mid, left, right)
     if val == n : 
         if mid%3==0 or mid%5==0 : 
-            right = mid -1
-          
+            right = mid -1          
         else : 
             ans = mid
             break
