@@ -15,7 +15,7 @@ def check(k) :
     else :
         return False
 
-left = 0 
+left = 1 
 right = K_MAX 
 k=0
 
