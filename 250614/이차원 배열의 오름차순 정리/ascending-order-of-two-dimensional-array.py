@@ -1,21 +1,34 @@
 n= int(input())
+MAX_K = min(10**2,n**2)
+
 k= int(input())
 
 matrix = [[(i+1)*(j+1) for j in range(n)] for i in range(n)]
 
+def check(num) : 
+    cnt = 0
+    for i in range(n) : 
+        for j in range(n) :
+            val = matrix[i][j] 
 
-grid = [0]*((n+1)**2)
+            if num >= val :
+                cnt +=1 
 
-for i in range(n) :
-    for j in range(n) :
-        val = matrix[i][j]
-        grid[val] +=1 
+    return cnt 
 
+import sys
 
-cnt = 0
-for i in range((n+1)**2) :
-    cnt += grid[i]
-    if cnt >= k :
-        break 
+left = 0 
+right = n*n 
+min_val = sys.maxsize
 
-print(i)
+while left<=right : 
+    mid = (left+right) //2 
+    
+    if check(mid) >= k :
+        right = mid -1 
+        min_val = min(mid,min_val)
+    else : 
+        left = mid +1 
+
+print(min_val)
