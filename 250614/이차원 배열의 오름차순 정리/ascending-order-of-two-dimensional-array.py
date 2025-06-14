@@ -3,14 +3,11 @@ MAX_K = min(10**2,n**2)
 
 k= int(input())
 
-matrix = [[(i+1)*(j+1) for j in range(n)] for i in range(n)]
-
 def check(num) : 
     cnt = 0
     for i in range(n) : 
         for j in range(n) :
-            val = matrix[i][j] 
-
+            val = (i+1)*(j+1)
             if num >= val :
                 cnt +=1 
 
