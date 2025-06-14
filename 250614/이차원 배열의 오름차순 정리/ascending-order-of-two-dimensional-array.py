@@ -5,14 +5,11 @@ k= int(input())
 
 def check(num) : 
     cnt = 0
-    for i in range(n) : 
-        for j in range(n) :
-            val = (i+1)*(j+1)
-            if num >= val :
-                cnt +=1 
-
-            if cnt >=k:
-                return True
+    for i in range(1,n+1) :
+        cnt += min(n, num//i)  
+    
+        if cnt >=k:
+            return True
     return False 
 
 import sys
