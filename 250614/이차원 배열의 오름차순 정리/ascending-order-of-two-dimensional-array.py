@@ -11,18 +11,19 @@ def check(num) :
             if num >= val :
                 cnt +=1 
 
-    return cnt 
+            if cnt >=k:
+                return True
+    return False 
 
 import sys
 
 left = 0 
 right = n*n 
 min_val = sys.maxsize
-
 while left<=right : 
     mid = (left+right) //2 
     
-    if check(mid) >= k :
+    if check(mid) :
         right = mid -1 
         min_val = min(mid,min_val)
     else : 
