@@ -12,10 +12,12 @@ def check(val) :
     
     return False 
 
+import sys
+MAX_SIZE = sys.maxsize 
 
 left= 1 
-right = 10**9 
-ans = right +1 
+right = MAX_SIZE 
+ans = MAX_SIZE
 
 while left <=right : 
     mid = (left+right)//2
