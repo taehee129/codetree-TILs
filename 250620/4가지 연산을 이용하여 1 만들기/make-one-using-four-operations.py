@@ -6,13 +6,13 @@ def op(num, op) :
     elif op == 1 :
         return num+1
     elif op == 2 : 
-        return num/2 
+        return num//2 
     else : 
-        return num/3
+        return num//3
 
 q= [] 
 q.append((n,0))
-
+check = [0]*(1000001*2)
 ans = n
 while q  :
     num,cnt = q.pop()
@@ -26,9 +26,11 @@ while q  :
             continue 
         if i==3 and num%3 != 0 :
             continue
-        
         ret = op(num,i)      
+        if check[ret] ==1 :
+            continue
         q.insert(0,(ret,cnt+1))
+        check[ret] = 1 
 
 
 print(ans)
