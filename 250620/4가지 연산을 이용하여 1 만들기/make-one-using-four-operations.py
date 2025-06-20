@@ -11,11 +11,15 @@ def op(num, op) :
         return num/3
 
 q= [] 
-q.append((n,1))
+q.append((n,0))
 
 ans = n
 while q  :
     num,cnt = q.pop()
+
+    if num ==1 : 
+        ans = cnt 
+        break 
     
     for i in range(4) :
         if i==2 and num%2 != 0 :
@@ -23,15 +27,9 @@ while q  :
         if i==3 and num%3 != 0 :
             continue
         
-        ret = op(num,i)
-        if ret ==1 :
-            ans = cnt 
-            break
-        
+        ret = op(num,i)      
         q.insert(0,(ret,cnt+1))
-        
-    if ret ==1 :
-            break
+
 
 print(ans)
 
