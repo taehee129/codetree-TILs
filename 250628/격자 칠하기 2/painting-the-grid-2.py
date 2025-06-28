@@ -9,11 +9,13 @@ def in_range(x,y) :
 def check(x,y,d) : 
     
     dxs,dys = [0,1,0,-1],[1,0,-1,0]
+    cnt =0
 
     global visited
 
     q = [(x,y)]
-    cnt =0
+    visited[x][y] = 1 
+    cnt +=1
     while q :
         x,y = q.pop()
 
@@ -54,7 +56,7 @@ while left <= right :
             if check(i,j,mid) >=a/2 : 
                 flag = True 
                 break
-    if flag : 
+    if flag :  
         right = mid-1 
         ans = min(ans,mid)
     else :
