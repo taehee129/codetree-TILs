@@ -14,11 +14,11 @@ def check(num) :
             continue 
         pre_x1, pre_x2 = positions[idx-1][0], positions[idx-1][1]
 
-        if position >= pre_x1 and position <= pre_x2 : 
-            position = x1+num
-            continue
         if position >= x1 and position <= x2 :
-            position +=num          
+            if position >= pre_x1 and position <= pre_x2 :
+                position =pre_x2+1+num
+            else :
+                position +=num          
         elif position > x2 : 
             return False 
         elif position < x1 : 
@@ -32,11 +32,11 @@ right = MAX_N
 max_num = 0
 
 while left <= right : 
-    mid = (left+right) //2 
+    mid = (left+right)//2  
 
     if check(mid) : 
         max_num = max(mid,max_num) 
-        left =mid +1 
+        left = mid +1 
     else : 
         right = mid -1 
     
