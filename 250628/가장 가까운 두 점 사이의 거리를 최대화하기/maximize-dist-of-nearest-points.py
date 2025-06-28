@@ -15,10 +15,10 @@ def check(num) :
         pre_x1, pre_x2 = positions[idx-1][0], positions[idx-1][1]
 
         if position >= x1 and position <= x2 :
-            if position >= pre_x1 and position <= pre_x2 :
-                position =pre_x2+1+num
-            else :
-                position +=num          
+            # if position >= pre_x1 and position <= pre_x2 :
+            #     position =pre_x2+1+num
+            # else :
+            position +=num          
         elif position > x2 : 
             return False 
         elif position < x1 : 
