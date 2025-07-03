@@ -16,8 +16,8 @@ for num in nums :
     diff = k-num 
     if diff in d :
         cnt += d[diff]
-    if diff == k :
+    if diff == num :
         cnt -= 1 
-    
+
 print(cnt//2)
     
