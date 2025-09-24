@@ -49,7 +49,7 @@ for i in range(n-2,-1,-1) :
 
 ans = 0 
 
-ans = max(hl[n-1],sl[i],pl[i])
+ans = max(hl[n-1],sl[n-1],pl[n-1])
 for i in range(n-1) : 
     lst = [
     hl[i] + sr[i+1],
