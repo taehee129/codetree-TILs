@@ -56,7 +56,7 @@ for i in range(n-1) :
     hl[i] + pr[i+1],
     sl[i] + hr[i+1],
     sl[i] + pr[i+1],
-    pl[i] + sr[i+1],
+    pl[i] + hr[i+1],
     pl[i] + sr[i+1]
     ] 
 
