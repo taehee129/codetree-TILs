@@ -1,67 +1,36 @@
+# 변수 선언 및 입력:
 n = int(input())
+matches = [input() for _ in range(n)]
 
-b = [input() for _ in range(n)]
+L, R = [0] * n, [0] * n
+ans = 0
 
-def hsp(a,b) :
+# L 배열을 채워줍니다.
+# L[i] = 0번부터 i번까지 동일한 모양만 냈을 때
+#        최대로 이길 수 있는 횟수
+for shape in "PHS":
+    same_cnt = 0
+    for i in range(n):    
+        if matches[i] == shape:
+            same_cnt += 1
+        
+        L[i] = max(L[i], same_cnt)
 
-    if a == 'H' : 
-        if b == 'S' : 
-            return 1 
+# R 배열을 채워줍니다.
+# R[i] = i번부터 n - 1번까지 동일한 모양만 냈을 때
+#        최대로 이길 수 있는 횟수
 
-    if a =='S' :
-        if b =='P' :
-            return 1 
-    
-    if a =='P' :
-        if b == 'H' : 
-            return 1 
-    
-    return 0 
+for shape in "PHS":
+    same_cnt = 0
+    for i in range(n - 1, -1, -1):
+        if matches[i] == shape:
+            same_cnt += 1
+        
+        R[i] = max(R[i], same_cnt)
 
-hl = [0]*n
-hr = [0]*n
-
-sl = [0]*n
-sr = [0]*n 
-
-pl = [0]*n
-pr = [0]*n 
-
-hl[0] = hsp('H',b[0])
-sl[0] = hsp('S',b[0])
-pl[0] = hsp('P',b[0])
-
-for i in range(1,n) : 
-    hl[i] = hl[i-1] + hsp('H',b[i])
-    sl[i] = sl[i-1] + hsp('S',b[i])
-    pl[i] = pl[i-1] + hsp('P',b[i])
-
-
-hr[n-1] = hsp('H',b[n-1])
-sr[n-1] = hsp('S',b[n-1])
-pr[n-1] = hsp('P',b[n-1])
-
-for i in range(n-2,-1,-1) : 
-    hr[i] = hr[i+1] + hsp('H',b[i])
-    sr[i] = sr[i+1] + hsp('S',b[i])
-    pr[i] = pr[i+1] + hsp('P',b[i])
-
-
-ans = 0 
-
-ans = max(hl[n-1],sl[n-1],pl[n-1])
-for i in range(n-1) : 
-    lst = [
-    hl[i] + sr[i+1],
-    hl[i] + pr[i+1],
-    sl[i] + hr[i+1],
-    sl[i] + pr[i+1],
-    pl[i] + hr[i+1],
-    pl[i] + sr[i+1]
-    ] 
-
-    maxval = max(lst) 
-
-    ans = max(ans,maxval)
+# 해당 순간에 선택을 변경했다 했을 때
+# 최대로 이기는 횟수를 갱신해줍니다.
+for i in range(0, n - 1):
+    ans = max(ans, L[i] + R[i + 1])
 
 print(ans)
